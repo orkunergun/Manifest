@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+ <!-- Remotes -->
+  <remote  name="Redmi-MT6768" fetch="https://github.com/Redmi-MT6768"/>
+  <remote  name="rrr" fetch="https://github.com/PixelExperience"/>
+  <remote  name="me" fetch="https://github.com/orkunergun"/>
+
+ <!-- Device Trees -->
+  <project path="device/xiaomi/lava" name="DeviceTree" remote="me" revision="ProjectArcana-12.1"/>
+  <project path="device/xiaomi/mt6768-common" name="CommonDeviceTree" remote="me" revision="twelve"/>
+  <project path="kernel/xiaomi/mt6768" name="LightningPlus" remote="me" revision="12.1"/>
+  <project path="vendor/xiaomi/lava" name="VendorTree" remote="me" revision="twelve"/>
+  <project path="vendor/xiaomi/mt6768-ims" name="android_vendor_xiaomi_mt6768-ims" remote="Redmi-MT6768" revision="twelve"/>
+  
+ <!-- Extras -->
+  <remove-project name="frameworks_opt_telephony" path="frameworks/opt/telephony"/>
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="rrr" revision="twelve"/>
+  <remove-project name="android_frameworks_opt_net_ims"  path="frameworks/opt/net/ims"/>
+  <project path="frameworks/opt/net/ims" name="frameworks_opt_net_ims" remote="rrr" revision="twelve"/>
+
+</manifest>
