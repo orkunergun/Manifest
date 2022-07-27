@@ -2,21 +2,28 @@
 <manifest>
 
  <!-- Remotes -->
-  <remote  name="Redmi-MT6768" fetch="https://github.com/Redmi-MT6768"/>
+  <remote  name="r9" fetch="https://gitlab.com/R9Lab"/>
+  <remote  name="r" fetch="https://github.com/PixelExperience-Devices"/>
+  <remote  name="rr" fetch="https://github.com/Redmi-MT6768"/>
   <remote  name="rrr" fetch="https://github.com/PixelExperience"/>
   <remote  name="me" fetch="https://github.com/orkunergun"/>
 
  <!-- Device Trees -->
-  <project path="device/xiaomi/lava" name="DeviceTree" remote="me" revision="ProjectArcana-12.1"/>
+  <project path="device/xiaomi/lava" name="DeviceTree" remote="me" revision="VoidUI-12.1"/>
   <project path="device/xiaomi/mt6768-common" name="CommonDeviceTree" remote="me" revision="twelve"/>
   <project path="kernel/xiaomi/mt6768" name="LightningPlus" remote="me" revision="12.1"/>
   <project path="vendor/xiaomi/lava" name="VendorTree" remote="me" revision="twelve"/>
-  <project path="vendor/xiaomi/mt6768-ims" name="android_vendor_xiaomi_mt6768-ims" remote="Redmi-MT6768" revision="twelve"/>
+  <project path="vendor/xiaomi/mt6768-ims" name="android_vendor_xiaomi_mt6768-ims" remote="rr" revision="twelve"/>
   
  <!-- Extras -->
-  <remove-project name="frameworks_opt_telephony" path="frameworks/opt/telephony"/>
+  <project path="device/mediatek/sepolicy_vndr" name="SepolicyVendor" remote="r9" revision="twelve"/>
+  <remove-project name="frameworks_opt_telephony"/>
+  <remove-project name="device_custom_sepolicy"/>
+  <remove-project name="external_tinyxml"/>
+  <project path="external/tinyxml" name="ArrowOS/android_external_tinyxml" remote="github" revision="arrow-12.0"/>
+  <project path="device/custom/sepolicy" name="device_custom_sepolicy" remote="r9" revision="aosp-12.1"/>
   <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="rrr" revision="twelve"/>
-  <remove-project name="android_frameworks_opt_net_ims"  path="frameworks/opt/net/ims"/>
+  <remove-project name="frameworks_opt_net_ims"/>
   <project path="frameworks/opt/net/ims" name="frameworks_opt_net_ims" remote="rrr" revision="twelve"/>
 
 </manifest>
